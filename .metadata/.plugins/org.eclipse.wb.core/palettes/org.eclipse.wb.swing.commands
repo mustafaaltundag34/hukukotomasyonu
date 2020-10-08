@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<addComponent
+		id="custom_1585525372053"
+		name="DateParser"
+		visible="true"
+		class="jdk.nashorn.internal.parser.DateParser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<removeEntry
+		id="custom_1585525372053"/>
+	<addComponent
+		id="custom_1585525824518"
+		name="JCalendar"
+		visible="true"
+		class="com.toedter.calendar.JCalendar"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<removeEntry
+		id="custom_1585525824518"/>
+	<addComponent
+		id="custom_1585532034978"
+		name="JDateComponentFactory"
+		visible="true"
+		class="org.jdatepicker.JDateComponentFactory"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="custom_1585532066049"
+		name="JDatePickerUtil"
+		visible="true"
+		class="org.jdatepicker.util.JDatePickerUtil"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<removeEntry
+		id="custom_1585532034978"/>
+	<removeEntry
+		id="custom_1585532066049"/>
+	<addComponent
+		id="com.toedter.calendar.JDayChooser_1585536321083"
+		name="JDayChooser"
+		description="Custom component: com.toedter.calendar.JDayChooser"
+		visible="true"
+		class="com.toedter.calendar.JDayChooser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.calendar.JMonthChooser_1585536321083"
+		name="JMonthChooser"
+		description="Custom component: com.toedter.calendar.JMonthChooser"
+		visible="true"
+		class="com.toedter.calendar.JMonthChooser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.components.JLocaleChooser_1585536321083"
+		name="JLocaleChooser"
+		description="Custom component: com.toedter.components.JLocaleChooser"
+		visible="true"
+		class="com.toedter.components.JLocaleChooser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.calendar.JCalendar_1585536321083"
+		name="JCalendar"
+		description="Custom component: com.toedter.calendar.JCalendar"
+		visible="true"
+		class="com.toedter.calendar.JCalendar"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.calendar.JDateChooser_1585536321083"
+		name="JDateChooser"
+		description="Custom component: com.toedter.calendar.JDateChooser"
+		visible="true"
+		class="com.toedter.calendar.JDateChooser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.components.JSpinField_1585536321083"
+		name="JSpinField"
+		description="Custom component: com.toedter.components.JSpinField"
+		visible="true"
+		class="com.toedter.components.JSpinField"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addComponent
+		id="com.toedter.calendar.JYearChooser_1585536321083"
+		name="JYearChooser"
+		description="Custom component: com.toedter.calendar.JYearChooser"
+		visible="true"
+		class="com.toedter.calendar.JYearChooser"
+		category="org.eclipse.wb.swing.JGoodies"/>
+	<addCategory
+		id="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"
+		name="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143"
+		description="Container with import elements from C:\Users\tcmaltundag\Desktop\analiz proje\hukukburosu\org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143.jar"
+		visible="true"
+		open="true"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.Activator_1587496290494"
+		name="Activator"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.Activator"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.Activator"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.gef.EditPartFactory_1587496290494"
+		name="EditPartFactory"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.gef.EditPartFactory"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.gef.EditPartFactory"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.gef.FrameViewEditPart_1587496290494"
+		name="FrameViewEditPart"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.gef.FrameViewEditPart"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.gef.FrameViewEditPart"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo_1587496290494"
+		name="FrameViewInfo"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$1_1587496290494"
+		name="1"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$1"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$1"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$2_1587496290494"
+		name="2"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$2"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.FrameViewInfo$2"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.FrameViewTopBoundsSupport_1587496290494"
+		name="FrameViewTopBoundsSupport"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.FrameViewTopBoundsSupport"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.FrameViewTopBoundsSupport"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor_1587496290494"
+		name="Jsr296RootProcessor"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$1_1587496290494"
+		name="1"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$1"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$1"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<addComponent
+		id="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$2_1587496290494"
+		name="2"
+		description="Custom component: org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$2"
+		visible="true"
+		class="org.eclipse.wb.internal.swing.jsr296.model.Jsr296RootProcessor$2"
+		category="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+	<removeCategory
+		id="org.eclipse.wb.swing.jsr296_1.1.0.r37x201109091143_1587496290494"/>
+</commands>

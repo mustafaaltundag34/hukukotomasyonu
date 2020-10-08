@@ -1,0 +1,19 @@
+1586736838725	Delete element
+1586740627749	Rename type 'muvekkilhukukihareketekle'
+1586740633797	Move compilation unit
+1586740646344	Rename type 'muvekkilhukukihareketler'
+1586740654000	Move compilation unit
+1587228534114	Rename type 'muvekkilcarihareketler'
+1587228545572	Move compilation unit
+1587228555551	Rename type 'muvekkilcarihareketekle'
+1587228570963	Move compilation unit
+1587247703610	Extract local variable 'obj'
+1587264007382	Delete element
+1587307921018	Rename type 'muvekkilozelhareketler'
+1587307927715	Move compilation unit
+1587310481150	Rename type 'muvekkilozelhareketekle'
+1587310501487	Move compilation unit
+1587323693929	Rename type 'muvekkildavahareketleri'
+1587323701854	Move compilation unit
+1587331333497	Rename type 'muvekkildavahareketekle'
+1587331339090	Move compilation unit

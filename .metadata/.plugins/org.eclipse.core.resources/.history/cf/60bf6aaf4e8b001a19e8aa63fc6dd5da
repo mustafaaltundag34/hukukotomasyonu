@@ -1,0 +1,131 @@
+package test;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JLabel;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.TexturePaint;
+
+import javax.swing.JDialog;
+
+public class hukukKayitsayitablosu extends JDialog {
+
+	private JPanel contentPane;
+	static Connection myconn1;
+	static Statement mystat1;
+	private JTable table2;
+	DefaultTableModel modelim = new DefaultTableModel();//TABLO MODELINI TANIMLIYORUZ
+	Object [] kolonlar = {"Personel Sayýsý","Avukat Sayýsý","Müvekkil Sayýsý","M.CariHareket","M.DavaHareket","M.Davali Hareket","M.HukukiHareket","M.OzelHareket"}; //KOLON TANIMLAMA
+	Object [] satirlar = new Object[8]; //SATIR TANIMLAMA
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					hukukKayitsayitablosu frame = new hukukKayitsayitablosu();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public hukukKayitsayitablosu() {
+		setResizable(false);
+		setModal(true);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 871, 284);
+		setLocationRelativeTo(null);
+		
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 62, 829, 119);
+		contentPane.add(scrollPane);
+		
+		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {
+				
+				modelim.setRowCount(0);
+				ResultSet rs1 = null;
+				try 
+				{
+					
+					myconn1=DriverManager.getConnection (hukukBaglanti.sunucuparametresi,"root","");
+					String listele="SELECT  (SELECT COUNT(*)FROM   personelbilgi) AS personel_sayi,(SELECT COUNT(*)FROM   avukatbilgi) AS avukat_sayi,(SELECT COUNT(*)FROM   muvekkilbilgi) AS muvekkil_sayi,(SELECT COUNT(*)FROM   muvekkilcarihareket) AS muvekkil_cari_sayi,(SELECT COUNT(*)FROM   muvekkildavahareket) AS muvekkil_dava_sayi,(SELECT COUNT(*)FROM   muvekkildavalibilgi) AS muvekkil_davali_sayi,(SELECT COUNT(*)FROM   muvekkilhukukihareket) AS muvekkil_hukuki_sayi,(SELECT COUNT(*)FROM   muvekkilozelhareket) AS muvekkil_ozel_sayi from dual ";
+ 					
+					mystat1=myconn1.createStatement();
+					rs1=mystat1.executeQuery(listele);
+					if(rs1.next())
+					{
+						satirlar[0]=rs1.getString("personel_sayi")+" kayýt";
+						satirlar[1]=rs1.getString("avukat_sayi")+" kayýt";
+						satirlar[2]=rs1.getString("muvekkil_sayi")+" kayýt";
+						satirlar[3]=rs1.getString("muvekkil_cari_sayi")+" kayýt";
+						satirlar[4]=rs1.getString("muvekkil_dava_sayi")+" kayýt";
+						satirlar[5]=rs1.getString("muvekkil_davali_sayi")+" kayýt";
+						satirlar[6]=rs1.getString("muvekkil_hukuki_sayi")+" kayýt";
+						satirlar[7]=rs1.getString("muvekkil_ozel_sayi")+" kayýt";
+						 
+						modelim.addRow(satirlar);
+						
+					}
+					table2.setModel(modelim);
+   				
+				}catch(SQLException e1)
+				{
+					e1.printStackTrace();
+				}
+
+			}
+		});
+		
+		
+		
+		table2 = new JTable();
+		//scrollPane.setColumnHeaderView(table);
+		//TABLODA SÜTUNLARI TIKLAYINCA ÝÞLEM YAPMASINI ENGELLETÝYORUM
+				table2 = new JTable(){
+			       // private static final long serialVersionUID = 1L;
+			        public boolean isCellEditable(int row, int column) {                
+			                return false;               
+			        };
+			    };
+			    //BURAYA KADAR
+		scrollPane.setViewportView(table2);
+		
+		JLabel lblNewLabel = new JLabel("Hukuk Burosu Otomasyonu  Kayit Kapasite Durumu :");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lblNewLabel.setForeground(Color.RED);
+		lblNewLabel.setBounds(10, 11, 444, 29);
+		contentPane.add(lblNewLabel);
+		modelim.setColumnIdentifiers(kolonlar);
+		
+	}
+}

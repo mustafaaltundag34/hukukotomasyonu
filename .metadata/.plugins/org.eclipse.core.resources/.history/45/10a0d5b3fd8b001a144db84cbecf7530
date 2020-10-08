@@ -1,0 +1,122 @@
+package test;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JProgressBar;
+import javax.swing.Timer;
+import javax.swing.WindowConstants;
+import javax.swing.border.EmptyBorder;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.SQLException;
+
+
+public class hukukMuvekkilprogress extends JDialog {
+
+	static Timer timer;//PROGRESS ICIN
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					hukukMuvekkilprogress frame = new hukukMuvekkilprogress();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	
+	
+	public hukukMuvekkilprogress() {
+		
+		setModal(true);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+		setBounds(100, 100, 1150, 150);
+		setLocationRelativeTo(null);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {
+				
+				//PROGRESS EKLEME
+				JProgressBar progressBar = new JProgressBar();
+				progressBar.setStringPainted(true);
+				progressBar.setBounds(0, 0,1150,150);
+				getContentPane().add(progressBar);
+				
+				timer = new Timer (100, new ActionListener() {
+					private int x=0;
+					public void actionPerformed(ActionEvent arg0) {
+						
+						progressBar.setValue(x+=10);
+						if (x==100) {
+							timer.stop();
+							x=0;
+							
+							//KULLANICI LOGU EKLEME
+							String islemaciklama;
+							islemaciklama="Muvekkil Ana Ekranýna gitti...";
+							String sorgu_kaydet="insert into hukuklogislem (kullaniciadi,kullaniciyetki,Aciklama)values('"+hukukBaglanti.logkullaniciadi+"','"+hukukBaglanti.logkullaniciyetkisi+"','"+islemaciklama +"')";
+							 
+	 						try {
+	 							hukukBaglanti baglan = new hukukBaglanti();
+	 							baglan.yap();
+								baglan.mystat1=baglan.myconn1.createStatement();
+								baglan.mystat1.executeUpdate(sorgu_kaydet);
+								//JOptionPane.showMessageDialog(null,"Islem Baþarýlý");
+								 
+							} catch (SQLException e1) {
+								// TODO Auto-generated catch block
+								e1.printStackTrace();
+							}
+	 						
+							//KULLANICI LOGU EKLEME
+							hukukMuvekkilanaform frame = new hukukMuvekkilanaform();
+							frame.show();
+							frame.setLocationRelativeTo(null); //FORMU MERKEZE ALIYOR
+							progressBar.hide();
+							dispose();
+						}
+						}
+				});
+
+				//PROGRESS EKLEME
+				timer.start();
+
+				}
+
+				
+			@Override
+			public void windowOpened(WindowEvent e) {
+				
+				//////
+
+
+				
+			}
+		});
+
+	}
+
+}
